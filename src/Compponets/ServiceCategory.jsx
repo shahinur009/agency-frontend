@@ -3,25 +3,25 @@ import { HiArrowRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
 const services = [
-  { id: 1, icon: "/icons/approval.png", title: "Visa approval" },
-  { id: 2, icon: "/icons/visa.png", title: "Visa" },
+  { id: 1, icon: "../../public/logo/icon/1-2.png", title: "Visa approval" },
+  { id: 2, icon: "../../public/logo/icon/1-2.png", title: "Visa" },
   {
     id: 3,
-    icon: "/icons/registration.png",
+    icon: "../../public/logo/icon/3.png",
     title: "Registration of a foreign national",
   },
   {
     id: 4,
-    icon: "/icons/residence.png",
+    icon: "../../public/logo/icon/4.png",
     title: "Reside for an official and private purpose",
   },
-  { id: 5, icon: "/icons/citizenship.png", title: "Citizenship" },
+  { id: 5, icon: "../../public/logo/icon/5.png", title: "Citizenship" },
   {
     id: 6,
-    icon: "/icons/branches.png",
+    icon: "../../public/logo/icon/6.png",
     title: "Branches and representative offices",
   },
-  { id: 7, icon: "/icons/adoption.png", title: "Adoption" },
+  { id: 7, icon: "../../public/logo/icon/7.png", title: "Adoption" },
 ];
 
 function ServiceCategory() {
@@ -43,24 +43,28 @@ function ServiceCategory() {
             <div
               key={service.id}
               onClick={() => handleRedirect(service.id)}
-              className="group flex justify-between items-center bg-white rounded-2xl shadow-md p-5 hover:shadow-lg cursor-pointer transition-all duration-200"
+              className="group relative flex justify-between items-center bg-white rounded-2xl shadow-md py-3 pl-3 pr-2 cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg"
             >
               {/* Left side: icon + title */}
-              <div className="items-center space-x-3">
+              <div className="flex items-center space-x-3">
                 <img
                   src={service.icon}
                   alt={service.title}
-                  className="w-8 h-8 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
-                <h3 className="text-sm font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900">
                   {service.title}
                 </h3>
-                <div className="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-200 bg-gray-100 group-hover:bg-blue-600">
-                  <HiArrowRight className="text-gray-700 group-hover:text-white text-lg" />
-                </div>
               </div>
 
-              {/* Right arrow — only this changes color on hover */}
+              {/* Right side: animated arrow area */}
+              <div className="relative w-14 h-full flex items-center justify-center overflow-hidden">
+                {/* Blue background - completely hidden at start */}
+                <div className="absolute inset-0 bg-blue-600 translate-x-[120%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+
+                {/* Arrow icon */}
+                <HiArrowRight className="relative z-10 text-gray-700 group-hover:text-white text-xl transition-colors duration-300" />
+              </div>
             </div>
           ))}
         </div>
