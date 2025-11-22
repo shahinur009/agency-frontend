@@ -120,26 +120,234 @@ const countryData = [
     continent: "Asia",
   },
 
-  // Example European countries
+  // European countries
+  {
+    name: "Albania",
+    img: "../../public/logo/flag/Europe/Albania.png",
+    continent: "Europe",
+  },
+  {
+    name: "Austria",
+    img: "../../public/logo/flag/Europe/Austria.png",
+    continent: "Europe",
+  },
+  {
+    name: "Belarus",
+    img: "../../public/logo/flag/Europe/Belarus.png",
+    continent: "Europe",
+  },
+  {
+    name: "Belgium",
+    img: "../../public/logo/flag/Europe/Belgium.png",
+    continent: "Europe",
+  },
+  {
+    name: "Bulgaria",
+    img: "../../public/logo/flag/Europe/Bulgaria.png",
+    continent: "Europe",
+  },
+  {
+    name: "Croatia",
+    img: "../../public/logo/flag/Europe/Croatia.png",
+    continent: "Europe",
+  },
+  {
+    name: "Czech Republic",
+    img: "../../public/logo/flag/Europe/Czech Republic.png",
+    continent: "Europe",
+  },
+  {
+    name: "Denmark",
+    img: "../../public/logo/flag/Europe/Denmark.png",
+    continent: "Europe",
+  },
+  {
+    name: "Estonia",
+    img: "../../public/logo/flag/Europe/Estonia.png",
+    continent: "Europe",
+  },
+  {
+    name: "Finland",
+    img: "../../public/logo/flag/Europe/Finland.png",
+    continent: "Europe",
+  },
   {
     name: "France",
-    img: "../../public/logo/flag/France.png",
+    img: "../../public/logo/flag/Europe/France.png",
     continent: "Europe",
   },
   {
     name: "Germany",
-    img: "../../public/logo/flag/Germany.png",
+    img: "../../public/logo/flag/Europe/Germany.png",
+    continent: "Europe",
+  },
+  {
+    name: "Hungary",
+    img: "../../public/logo/flag/Europe/Hungary.png",
+    continent: "Europe",
+  },
+  {
+    name: "Iceland",
+    img: "../../public/logo/flag/Europe/Iceland.png",
     continent: "Europe",
   },
   {
     name: "Italy",
-    img: "../../public/logo/flag/Italy.png",
+    img: "../../public/logo/flag/Europe/Italy.png",
     continent: "Europe",
   },
   {
-    name: "Spain",
-    img: "../../public/logo/flag/Spain.png",
+    name: "Latvia",
+    img: "../../public/logo/flag/Europe/Latvia.png",
     continent: "Europe",
+  },
+  {
+    name: "Lithuania",
+    img: "../../public/logo/flag/Europe/Lithuania.png",
+    continent: "Europe",
+  },
+  {
+    name: "Luxembourg",
+    img: "../../public/logo/flag/Europe/Luxembourg.png",
+    continent: "Europe",
+  },
+  {
+    name: "Malta",
+    img: "../../public/logo/flag/Europe/Malta.png",
+    continent: "Europe",
+  },
+  {
+    name: "Monaco",
+    img: "../../public/logo/flag/Europe/Monaco.png",
+    continent: "Europe",
+  },
+  {
+    name: "Netherlands",
+    img: "../../public/logo/flag/Europe/Netherlands.png",
+    continent: "Europe",
+  },
+  {
+    name: "Norway",
+    img: "../../public/logo/flag/Europe/Norway.png",
+    continent: "Europe",
+  },
+  {
+    name: "Poland",
+    img: "../../public/logo/flag/Europe/Poland.png",
+    continent: "Europe",
+  },
+  {
+    name: "Portugal",
+    img: "../../public/logo/flag/Europe/Portugal.png",
+    continent: "Europe",
+  },
+  {
+    name: "Romania",
+    img: "../../public/logo/flag/Europe/Romania.png",
+    continent: "Europe",
+  },
+  {
+    name: "RUSSIAN FEDERATION",
+    img: "../../public/logo/flag/Europe/RUSSIAN FEDERATION.png",
+    continent: "Europe",
+  },
+  {
+    name: "Slovakia",
+    img: "../../public/logo/flag/Europe/Slovakia.png",
+    continent: "Europe",
+  },
+  {
+    name: "Slovenia",
+    img: "../../public/logo/flag/Europe/Slovenia.png",
+    continent: "Europe",
+  },
+  {
+    name: "Sweden",
+    img: "../../public/logo/flag/Europe/Sweden.png",
+    continent: "Europe",
+  },
+  {
+    name: "Switzerland",
+    img: "../../public/logo/flag/Europe/Switzerland.png",
+    continent: "Europe",
+  },
+  {
+    name: "Ukraine",
+    img: "../../public/logo/flag/Europe/Ukraine.png",
+    continent: "Europe",
+  },
+  // Americans countries
+  {
+    name: "Argentina",
+    img: "../../public/logo/flag/Americans/Argentina.png",
+    continent: "Americas",
+  },
+  {
+    name: "Brazil",
+    img: "../../public/logo/flag/Americans/Brazil.png",
+    continent: "Americas",
+  },
+  {
+    name: "Canada",
+    img: "../../public/logo/flag/Americans/Canada.png",
+    continent: "Americas",
+  },
+  {
+    name: "Chile",
+    img: "../../public/logo/flag/Americans/Chile.png",
+    continent: "Americas",
+  },
+  {
+    name: "Colombia",
+    img: "../../public/logo/flag/Americans/Colombia.png",
+    continent: "Americas",
+  },
+  {
+    name: "Cuba",
+    img: "../../public/logo/flag/Americans/Cuba.png",
+    continent: "Americas",
+  },
+  {
+    name: "Ecuador",
+    img: "../../public/logo/flag/Americans/Ecuador.png",
+    continent: "Americas",
+  },
+  {
+    name: "Mexico",
+    img: "../../public/logo/flag/Americans/Mexico.png",
+    continent: "Americas",
+  },
+  {
+    name: "Paraguay",
+    img: "../../public/logo/flag/Americans/Paraguay.png",
+    continent: "Americas",
+  },
+  {
+    name: "Peru",
+    img: "../../public/logo/flag/Americans/Peru.png",
+    continent: "Americas",
+  },
+  {
+    name: "United States of America",
+    img: "../../public/logo/flag/Americans/United States of America.png",
+    continent: "Americas",
+  },
+  {
+    name: "Uruguay",
+    img: "../../public/logo/flag/Americans/Uruguay.png",
+    continent: "Americas",
+  },
+
+  // Oceania countries
+  {
+    name: "Australia",
+    img: "../../public/logo/flag/Oceania/Australia.png",
+    continent: "Oceania",
+  },
+  {
+    name: "New Zealand",
+    img: "../../public/logo/flag/Oceania/New Zealand.png",
+    continent: "Oceania",
   },
 ];
 

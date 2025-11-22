@@ -13,7 +13,6 @@ function Home() {
         <ServiceCategory />
         <VisaFreeCountry />
         <VisaInfoTabs />
-        {/* <ProductsPage></ProductsPage> */}
       </div>
     </>
   );

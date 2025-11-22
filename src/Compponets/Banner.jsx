@@ -69,7 +69,7 @@ function Banner() {
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden py-10 container">
+    <div className="relative h-screen overflow-hidden py-4 md:py-10 container">
       {/* Background video */}
       <video
         autoPlay
@@ -83,7 +83,7 @@ function Banner() {
       <div className="absolute inset-0 bg-black bg-opacity-0"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full pt-20">
-        <div className="text-center text-white px-4 mb-12 space-y-4">
+        <div className="text-center text-white px-4 mb-4 md:mb-12 space-y-4">
           <h1 className="text-2xl md:text-4xl font-semibold drop-shadow-lg leading-tight">
             Which visa category is right for you?
           </h1>

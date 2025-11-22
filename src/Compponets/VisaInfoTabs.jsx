@@ -8,7 +8,7 @@ const VisaInfoTabs = () => {
   const currentContent = tabData.find(tab => tab.id === activeTab);
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen flex items-center justify-center">
+    <div className="lg:p-6 bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="bg-white rounded-xl shadow-lg flex flex-col md:flex-row container w-full overflow-hidden">
         {/* Left Section: Image */}
         <div className="md:w-1/2 w-full p-3 flex items-center justify-center ">
@@ -24,7 +24,7 @@ const VisaInfoTabs = () => {
         {/* Right Section: Content */}
         <div className="md:w-1/2 w-full md:p-5 p-3">
           {/* Tab Buttons */}
-          <div className="flex space-x-3 mb-6">
+          <div className="flex flex-wrap lg:grid-cols-3 space-x-3 mb-6 gap-2">
             {tabData.map((tab) => (
               <button
                 key={tab.id}

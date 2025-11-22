@@ -6,6 +6,8 @@ import Main from "../Layout/Main";
 import DashboardLayout from "../Dashboard/DashboardLayout";
 import Dashboard from "../Dashboard/Dashboard";
 import CartPage from "../Pages/CardPage/CardPage";
+import ServiceCategoryPage from "../Pages/Services/ServiceCategoryPage";
+import FAQPage from "../Pages/FAQ/FAQPage";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +27,14 @@ export const router = createBrowserRouter([
         path: "/cart",
         element: <CartPage />,
       },
-
+      {
+        path: "/service",
+        element: <ServiceCategoryPage />,
+      },
+      {
+        path: "/faq",
+        element: <FAQPage />,
+      },
     ],
   },
   {
@@ -37,7 +46,6 @@ export const router = createBrowserRouter([
         index: true,
         element: <Dashboard />,
       },
-
     ],
   },
 ]);
