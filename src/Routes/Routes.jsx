@@ -8,6 +8,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import CartPage from "../Pages/CardPage/CardPage";
 import ServiceCategoryPage from "../Pages/Services/ServiceCategoryPage";
 import FAQPage from "../Pages/FAQ/FAQPage";
+import Contact from "../Pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/faq",
         element: <FAQPage />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },

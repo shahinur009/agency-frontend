@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HiChevronRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -209,6 +210,17 @@ function ServiceCategoryPage() {
 
   return (
     <div className="container mx-auto px-4 py-10">
+      <div className="bg-gray-50 py-4 border-b">
+        <div className="container mx-auto px-4">
+          <nav className="text-sm text-gray-600">
+            <Link to="/" className="hover:text-blue-600">
+              Home
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-gray-900">Service category</span>
+          </nav>
+        </div>
+      </div>
       <div className="bg-white rounded-2xl shadow-xl p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* LEFT SIDEBAR */}
         <div className="border-r pr-4">
