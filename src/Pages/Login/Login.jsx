@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../../public/logo/logo-light.png";
+import logo from "/logo/logo-light.png";
 import { FaHome, FaSpinner } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";

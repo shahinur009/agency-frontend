@@ -1,4 +1,4 @@
-import mapImage from "../../../public/mongolia.avif";
+import mapImage from "/mongolia.avif";
 
 const Contact = () => {
   // Contact data organized in arrays for better maintainability
@@ -248,10 +248,7 @@ const Contact = () => {
         {/* CONTACT INFO */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {contactSections.map((section, sectionIndex) => (
-            <div
-              key={sectionIndex}
-              className=" transition-shadow duration-300"
-            >
+            <div key={sectionIndex} className=" transition-shadow duration-300">
               {section.items.map((item, itemIndex) => (
                 <div
                   key={itemIndex}

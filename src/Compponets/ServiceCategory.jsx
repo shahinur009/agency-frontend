@@ -3,25 +3,25 @@ import { HiArrowRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
 const services = [
-  { id: 1, icon: "../../public/logo/icon/1-2.png", title: "Visa approval" },
-  { id: 2, icon: "../../public/logo/icon/1-2.png", title: "Visa" },
+  { id: 1, icon: "/logo/icon/1-2.png", title: "Visa approval" },
+  { id: 2, icon: "/logo/icon/1-2.png", title: "Visa" },
   {
     id: 3,
-    icon: "../../public/logo/icon/3.png",
+    icon: "/logo/icon/3.png",
     title: "Registration of a foreign national",
   },
   {
     id: 4,
-    icon: "../../public/logo/icon/4.png",
+    icon: "/logo/icon/4.png",
     title: "Reside for an official and private purpose",
   },
-  { id: 5, icon: "../../public/logo/icon/5.png", title: "Citizenship" },
+  { id: 5, icon: "/logo/icon/5.png", title: "Citizenship" },
   {
     id: 6,
-    icon: "../../public/logo/icon/6.png",
+    icon: "/logo/icon/6.png",
     title: "Branches and representative offices",
   },
-  { id: 7, icon: "../../public/logo/icon/7.png", title: "Adoption" },
+  { id: 7, icon: "/logo/icon/7.png", title: "Adoption" },
 ];
 
 function ServiceCategory() {

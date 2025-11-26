@@ -12,39 +12,39 @@ const categories = [
     subCategories: [
       {
         name: "Officially",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
       {
         name: "Investor",
-        icon: "../../../public/logo/category-icon/investor.png",
+        icon: "/logo/category-icon/investor.png",
       },
       {
         name: "Employment",
-        icon: "../../../public/logo/category-icon/employement.png",
+        icon: "/logo/category-icon/employement.png",
       },
       {
         name: "Student",
-        icon: "../../../public/logo/category-icon/student.png",
+        icon: "/logo/category-icon/student.png",
       },
       {
         name: "Family",
-        icon: "../../../public/logo/category-icon/family.png",
+        icon: "/logo/category-icon/family.png",
       },
       {
         name: "Immigrant",
-        icon: "../../../public/logo/category-icon/immigrant.png",
+        icon: "/logo/category-icon/immigrant.png",
       },
       {
         name: "Religious",
-        icon: "../../../public/logo/category-icon/religion.png",
+        icon: "/logo/category-icon/religion.png",
       },
       {
         name: "Personal",
-        icon: "../../../public/logo/category-icon/personal.png",
+        icon: "/logo/category-icon/personal.png",
       },
       {
         name: "Short-term",
-        icon: "../../../public/logo/category-icon/short-tirm.png",
+        icon: "/logo/category-icon/short-tirm.png",
       },
     ],
   },
@@ -57,40 +57,40 @@ const categories = [
     subCategories: [
       {
         name: "Tourist Visa",
-        icon: "../../../public/logo/category-icon/personal.png",
+        icon: "/logo/category-icon/personal.png",
       },
       {
         name: "Business Visa",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
       {
         name: "Transit Visa",
-        icon: "../../../public/logo/category-icon/short-tirm.png",
+        icon: "/logo/category-icon/short-tirm.png",
       },
       {
         name: "Diplomatic Visa",
-        icon: "../../../public/logo/category-icon/investor.png",
+        icon: "/logo/category-icon/investor.png",
       },
     ],
   },
   {
     id: 3,
     title: "Registration of a foreign national",
-    icon: "../../../public/logo/category-icon/employement.png",
+    icon: "/logo/category-icon/employement.png",
     description:
       "Гадаадын иргэний бүртгэл нь Монгол Улсад оршин суугаа гадаадын иргэдийн мэдээллийг бүртгэх, хянах үйлчилгээ юм.",
     subCategories: [
       {
         name: "Temporary Registration",
-        icon: "../../../public/logo/category-icon/family.png",
+        icon: "/logo/category-icon/family.png",
       },
       {
         name: "Permanent Registration",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
       {
         name: "Registration Renewal",
-        icon: "../../../public/logo/category-icon/religion.png",
+        icon: "/logo/category-icon/religion.png",
       },
     ],
   },
@@ -103,15 +103,15 @@ const categories = [
     subCategories: [
       {
         name: "Official Residence",
-        icon: "../../../public/logo/category-icon/student.png",
+        icon: "/logo/category-icon/student.png",
       },
       {
         name: "Private Residence",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
       {
         name: "Business Residence",
-        icon: "../../../public/logo/category-icon/personal.png",
+        icon: "/logo/category-icon/personal.png",
       },
     ],
   },
@@ -124,19 +124,19 @@ const categories = [
     subCategories: [
       {
         name: "Citizenship by Birth",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
       {
         name: "Citizenship by Marriage",
-        icon: "../../../public/logo/category-icon/religion.png",
+        icon: "/logo/category-icon/religion.png",
       },
       {
         name: "Citizenship by Investment",
-        icon: "../../../public/logo/category-icon/investor.png",
+        icon: "/logo/category-icon/investor.png",
       },
       {
         name: "Dual Citizenship",
-        icon: "../../../public/logo/category-icon/short-tirm.png",
+        icon: "/logo/category-icon/short-tirm.png",
       },
     ],
   },
@@ -149,15 +149,15 @@ const categories = [
     subCategories: [
       {
         name: "Branch Registration",
-        icon: "../../../public/logo/category-icon/short-tirm.png",
+        icon: "/logo/category-icon/short-tirm.png",
       },
       {
         name: "Representative Office",
-        icon: "../../../public/logo/category-icon/student.png",
+        icon: "/logo/category-icon/student.png",
       },
       {
         name: "Legal Entity Registration",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
     ],
   },
@@ -170,36 +170,36 @@ const categories = [
     subCategories: [
       {
         name: "Domestic Adoption",
-        icon: "../../../public/logo/category-icon/religion.png",
+        icon: "/logo/category-icon/religion.png",
       },
       {
         name: "International Adoption",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
       {
         name: "Adoption Procedures",
-        icon: "../../../public/logo/category-icon/immigrant.png",
+        icon: "/logo/category-icon/immigrant.png",
       },
     ],
   },
   {
     id: 8,
     title: "Тодорхойлолт",
-    icon: "../../../public/logo/icon/8.svg",
+    icon: "/logo/icon/8.svg",
     description:
       "Тодорхойлолт үйлчилгээний тайлбар. Энэ хэсэгт төрөл бүрийн үйлчилгээний талаар дэлгэрэнгүй мэдээллийг авах боломжтой.",
     subCategories: [
       {
         name: "Service Information",
-        icon: "../../../public/logo/category-icon/official.png",
+        icon: "/logo/category-icon/official.png",
       },
       {
         name: "Requirements",
-        icon: "../../../public/logo/category-icon/personal.png",
+        icon: "/logo/category-icon/personal.png",
       },
       {
         name: "Procedures",
-        icon: "../../../public/logo/category-icon/immigrant.png",
+        icon: "/logo/category-icon/immigrant.png",
       },
     ],
   },

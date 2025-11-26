@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { TfiWorld } from "react-icons/tfi";
 import { IoIosArrowDown } from "react-icons/io";
-import logo from "../../public/logo/logo-light.png";
+import logo from "/logo/logo-light.png";
 import { AiOutlineFilePdf } from "react-icons/ai";
 
 function Navbar() {

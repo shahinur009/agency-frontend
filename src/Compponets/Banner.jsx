@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
-import bannerVideo from "../../public/logo/cover1.mp4";
+import bannerVideo from "/logo/cover1.mp4";
 import countryList from "react-select-country-list";
 import { IoIosArrowDown } from "react-icons/io";
 
