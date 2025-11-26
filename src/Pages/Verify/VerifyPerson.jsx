@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export const VerifyPerson = () => {
   const { id } = useParams();
@@ -9,13 +9,15 @@ export const VerifyPerson = () => {
   useEffect(() => {
     const fetchVerifyUserData = async () => {
       try {
-        const res = await fetch(`https://backend.isfs.site/api/visa-pdf-info?visa_number=${id}`);
+        const res = await fetch(
+          `https://backend.isfs.site/api/visa-pdf-info?visa_number=${id}`
+        );
         if (!res.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error("Failed to fetch data");
         }
         const json = await res.json();
         if (!json || !json.id) {
-          throw new Error('No user found');
+          throw new Error("No user found");
         }
         setData(json);
       } catch (err) {
@@ -31,8 +33,12 @@ export const VerifyPerson = () => {
       <div className="flex items-center justify-center min-h-screen bg-white">
         <div className="card bg-base-100 shadow-md border border-base-200 max-w-[700px] w-full">
           <div className="text-center card-body">
-            <h2 className="mb-3 text-xl font-bold card-title text-error">Error</h2>
-            <p className="text-sm text-base-content">{error}. Please try again or check the visa number.</p>
+            <h2 className="mb-3 text-xl font-bold card-title text-error">
+              Error
+            </h2>
+            <p className="text-sm text-base-content">
+              {error}. Please try again or check the visa number.
+            </p>
           </div>
         </div>
       </div>
@@ -44,7 +50,9 @@ export const VerifyPerson = () => {
       <div className="flex items-center justify-center min-h-screen bg-white">
         <div className="card bg-base-100 shadow-md border border-base-200 max-w-[700px] w-full">
           <div className="text-center card-body">
-            <h2 className="mb-3 text-xl font-bold card-title text-base-content">Loading...</h2>
+            <h2 className="mb-3 text-xl font-bold card-title text-base-content">
+              Loading...
+            </h2>
             <div className="w-6 h-6 mx-auto border-b-2 rounded-full animate-spin border-primary"></div>
           </div>
         </div>
