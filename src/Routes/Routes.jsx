@@ -9,6 +9,7 @@ import CartPage from "../Pages/CardPage/CardPage";
 import ServiceCategoryPage from "../Pages/Services/ServiceCategoryPage";
 import FAQPage from "../Pages/FAQ/FAQPage";
 import Contact from "../Pages/Contact/Contact";
+import { VerifyPerson } from "../Pages/Verify/VerifyPerson";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/mn/approval/:id",
+        element: <VerifyPerson />,
       },
       {
         path: "/cart",
