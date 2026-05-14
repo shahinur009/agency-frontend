@@ -20,7 +20,10 @@ function Login() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen w-full py-16 px-4">
+    <div
+      className="min-h-screen w-full py-16 px-4 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/logo/login/cover-background.jpg')" }}
+    >
       <div className="max-w-3xl lg:max-w-2xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-center text-black mb-12">
           {t.login.title}
