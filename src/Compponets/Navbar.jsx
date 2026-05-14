@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { TfiWorld } from "react-icons/tfi";
 import { IoIosArrowDown } from "react-icons/io";
 import logo from "/logo/logo-light.png";
 import { AiOutlineFilePdf } from "react-icons/ai";
+import { useLanguage } from "../Provider/LanguageContext";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [lang, setLang] = useState("EN");
+  const { lang, setLang, t } = useLanguage();
   const location = useLocation();
 
-  // Check if current route is home page
   const isHomePage = location.pathname === "/";
-
-  // Set navbar background and text colors based on route
   const navbarBgColor = isHomePage ? "bg-[#262265]" : "bg-white";
   const textColor = isHomePage ? "text-white" : "text-black";
 
@@ -34,38 +32,36 @@ function Navbar() {
             to="/"
             className={`uppercase hover:opacity-80 transition-opacity ${textColor}`}
           >
-            Home
+            {t.nav.home}
           </Link>
           <Link
             to="/service"
             className={`uppercase hover:opacity-80 transition-opacity ${textColor}`}
           >
-            Service
+            {t.nav.service}
           </Link>
           <Link
             to="/faq"
             className={`uppercase hover:opacity-80 transition-opacity ${textColor}`}
           >
-            Faq
+            {t.nav.faq}
           </Link>
           <Link
             to="/contact"
             className={`uppercase hover:opacity-80 transition-opacity ${textColor}`}
           >
-            Contact
+            {t.nav.contact}
           </Link>
         </div>
 
         {/* Right Nav */}
         <div className="flex items-center gap-4">
-          {/* User Manuals and instructions */}
           <div className="relative">
             <button className="bg-[#00acef] px-3 py-2 rounded-md flex items-center gap-2 text-white hover:bg-[#0099d6] transition-colors">
               <AiOutlineFilePdf />
-              Manuals and instructions
+              {t.nav.manuals}
             </button>
           </div>
-          {/* Language */}
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
@@ -100,12 +96,11 @@ function Navbar() {
             )}
           </div>
 
-          {/* Login */}
           <Link
             to="/login"
             className="bg-[#034ca1] px-4 py-2 rounded-md font-medium text-white hover:bg-[#023b7d] transition-colors"
           >
-            Log In
+            {t.nav.login}
           </Link>
         </div>
       </div>
@@ -114,7 +109,6 @@ function Navbar() {
       <div
         className={`lg:hidden w-full h-[90px] px-4 flex items-center justify-between relative ${navbarBgColor} ${textColor}`}
       >
-        {/* Menu */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="hover:opacity-80 transition-opacity"
@@ -122,14 +116,11 @@ function Navbar() {
           <FaBars className="text-2xl" />
         </button>
 
-        {/* Center Logo */}
         <Link to="/" className="absolute left-1/4 transform -translate-x-1/2">
           <img src={logo} alt="logo" className="w-[60px] h-[60px]" />
         </Link>
 
-        {/* Right Side */}
         <div className="flex items-center gap-2">
-          {/* Language */}
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
@@ -164,12 +155,11 @@ function Navbar() {
             )}
           </div>
 
-          {/* Login */}
           <Link
             to="/login"
             className="bg-[#034ca1] px-3 py-2 rounded-md text-white hover:bg-[#023b7d] transition-colors"
           >
-            Log In
+            {t.nav.login}
           </Link>
         </div>
       </div>
@@ -186,28 +176,28 @@ function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
             className={`block hover:opacity-80 transition-opacity py-2 ${textColor}`}
           >
-            Home
+            {t.nav.home}
           </Link>
           <Link
             to="/service"
             onClick={() => setIsMobileMenuOpen(false)}
             className={`block hover:opacity-80 transition-opacity py-2 ${textColor}`}
           >
-            Service
+            {t.nav.service}
           </Link>
           <Link
             to="/faq"
             onClick={() => setIsMobileMenuOpen(false)}
             className={`block hover:opacity-80 transition-opacity py-2 ${textColor}`}
           >
-            Faq
+            {t.nav.faq}
           </Link>
           <Link
             to="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
             className={`block hover:opacity-80 transition-opacity py-2 ${textColor}`}
           >
-            Contact
+            {t.nav.contact}
           </Link>
         </div>
       )}

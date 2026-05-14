@@ -1,21 +1,15 @@
 import React from "react";
-import logo from "/logo/logo-light.png";
-import { FaFacebook } from "react-icons/fa";
-import { LuInstagram } from "react-icons/lu";
-import { SiGmail } from "react-icons/si";
+import { useLanguage } from "../Provider/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
-    <>
-      <footer className="bg-[#034CA1] text-white">
-        <div className="flex justify-between items-center md:p-4 p-1">
-          <h3 className="text-sm md:text-lg">
-            © 2025 - DEPARTMENT OF FOREIGN CITIZENS AND CITIZENS
-          </h3>
-          <img src="/logo/astvision.svg" alt="" className="h-5" />
-        </div>
-      </footer>
-    </>
+    <footer className="bg-[#034CA1] text-white">
+      <div className="flex justify-between items-center md:p-4 p-1">
+        <h3 className="text-sm md:text-lg">{t.footer.copyright}</h3>
+        <img src="/logo/astvision.svg" alt="" className="h-5" />
+      </div>
+    </footer>
   );
 };
 

@@ -1,212 +1,99 @@
 import React, { useState } from "react";
 import { HiChevronRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../Provider/LanguageContext";
 
-const categories = [
+const meta = [
   {
-    id: 1,
-    title: "Visa approval",
     icon: "/logo/icon/1-2.png",
-    description:
-      "Гадаадын иргэнд виз олгохыг зөвшөөрч олгосон баримт бичгийг хэлнэ. Олгосон визийн зөвшөөрлийн дагуу Монгол Улсаас гадаад улсад суугаа дипломат төлөөлөгчийн газарт болон хилийн боомтод визээ даруулна.",
-    subCategories: [
-      {
-        name: "Officially",
-        icon: "/logo/category-icon/official.png",
-      },
-      {
-        name: "Investor",
-        icon: "/logo/category-icon/investor.png",
-      },
-      {
-        name: "Employment",
-        icon: "/logo/category-icon/employement.png",
-      },
-      {
-        name: "Student",
-        icon: "/logo/category-icon/student.png",
-      },
-      {
-        name: "Family",
-        icon: "/logo/category-icon/family.png",
-      },
-      {
-        name: "Immigrant",
-        icon: "/logo/category-icon/immigrant.png",
-      },
-      {
-        name: "Religious",
-        icon: "/logo/category-icon/religion.png",
-      },
-      {
-        name: "Personal",
-        icon: "/logo/category-icon/personal.png",
-      },
-      {
-        name: "Short-term",
-        icon: "/logo/category-icon/short-tirm.png",
-      },
+    subIcons: [
+      "/logo/category-icon/official.png",
+      "/logo/category-icon/investor.png",
+      "/logo/category-icon/employement.png",
+      "/logo/category-icon/student.png",
+      "/logo/category-icon/family.png",
+      "/logo/category-icon/immigrant.png",
+      "/logo/category-icon/religion.png",
+      "/logo/category-icon/personal.png",
+      "/logo/category-icon/short-tirm.png",
     ],
   },
   {
-    id: 2,
-    title: "Visa",
     icon: "/logo/icon/1-2.png",
-    description:
-      "Виз нь гадаадын иргэд Монгол Улсад орж ирэх, гарах эрхийг олгох баримт бичиг юм. Виз нь тодорхой хугацаатай байх бөгөөд зөвхөн нэг удаагийн аялалд хүчинтэй.",
-    subCategories: [
-      {
-        name: "Tourist Visa",
-        icon: "/logo/category-icon/personal.png",
-      },
-      {
-        name: "Business Visa",
-        icon: "/logo/category-icon/official.png",
-      },
-      {
-        name: "Transit Visa",
-        icon: "/logo/category-icon/short-tirm.png",
-      },
-      {
-        name: "Diplomatic Visa",
-        icon: "/logo/category-icon/investor.png",
-      },
+    subIcons: [
+      "/logo/category-icon/personal.png",
+      "/logo/category-icon/official.png",
+      "/logo/category-icon/short-tirm.png",
+      "/logo/category-icon/investor.png",
     ],
   },
   {
-    id: 3,
-    title: "Registration of a foreign national",
     icon: "/logo/category-icon/employement.png",
-    description:
-      "Гадаадын иргэний бүртгэл нь Монгол Улсад оршин суугаа гадаадын иргэдийн мэдээллийг бүртгэх, хянах үйлчилгээ юм.",
-    subCategories: [
-      {
-        name: "Temporary Registration",
-        icon: "/logo/category-icon/family.png",
-      },
-      {
-        name: "Permanent Registration",
-        icon: "/logo/category-icon/official.png",
-      },
-      {
-        name: "Registration Renewal",
-        icon: "/logo/category-icon/religion.png",
-      },
+    subIcons: [
+      "/logo/category-icon/family.png",
+      "/logo/category-icon/official.png",
+      "/logo/category-icon/religion.png",
     ],
   },
   {
-    id: 4,
-    title: "Reside for an official and private purpose",
     icon: "/logo/icon/4.png",
-    description:
-      "Албан болон хувийн зорилгоор оршин суух зөвшөөрөл авах үйлчилгээ. Гадаадын иргэд Монгол Улсад албан ёсны ажил, бизнес эсвэл хувийн зорилгоор оршин суухыг хүсэх тохиолдолд энэ үйлчилгээг ашиглана.",
-    subCategories: [
-      {
-        name: "Official Residence",
-        icon: "/logo/category-icon/student.png",
-      },
-      {
-        name: "Private Residence",
-        icon: "/logo/category-icon/official.png",
-      },
-      {
-        name: "Business Residence",
-        icon: "/logo/category-icon/personal.png",
-      },
+    subIcons: [
+      "/logo/category-icon/student.png",
+      "/logo/category-icon/official.png",
+      "/logo/category-icon/personal.png",
     ],
   },
   {
-    id: 5,
-    title: "Citizenship",
     icon: "/logo/icon/5.png",
-    description:
-      "Монгол Улсын иргэншил авах үйлчилгээ. Гадаадын иргэд Монгол Улсын иргэншил авах шаардлага, журмыг энэ хэсгээс мэдэх боломжтой.",
-    subCategories: [
-      {
-        name: "Citizenship by Birth",
-        icon: "/logo/category-icon/official.png",
-      },
-      {
-        name: "Citizenship by Marriage",
-        icon: "/logo/category-icon/religion.png",
-      },
-      {
-        name: "Citizenship by Investment",
-        icon: "/logo/category-icon/investor.png",
-      },
-      {
-        name: "Dual Citizenship",
-        icon: "/logo/category-icon/short-tirm.png",
-      },
+    subIcons: [
+      "/logo/category-icon/official.png",
+      "/logo/category-icon/religion.png",
+      "/logo/category-icon/investor.png",
+      "/logo/category-icon/short-tirm.png",
     ],
   },
   {
-    id: 6,
-    title: "Branches and representative offices",
     icon: "/logo/icon/6.png",
-    description:
-      "Гадаадын компаниудын Монгол Улсад салбар, төлөөлөгчийн газраа нээх, бүртгүүлэх үйлчилгээ.",
-    subCategories: [
-      {
-        name: "Branch Registration",
-        icon: "/logo/category-icon/short-tirm.png",
-      },
-      {
-        name: "Representative Office",
-        icon: "/logo/category-icon/student.png",
-      },
-      {
-        name: "Legal Entity Registration",
-        icon: "/logo/category-icon/official.png",
-      },
+    subIcons: [
+      "/logo/category-icon/short-tirm.png",
+      "/logo/category-icon/student.png",
+      "/logo/category-icon/official.png",
     ],
   },
   {
-    id: 7,
-    title: "Adoption",
     icon: "/logo/icon/7.png",
-    description:
-      "Олон улсын үндэслэлээр хүүхэд үрчлэх үйлчилгээ. Гадаадын иргэд Монгол Улсын иргэдийг үрчлэх эсвэл Монгол Улсын иргэд гадаадын иргэдийг үрчлэх тохиолдолд энэ үйлчилгээг ашиглана.",
-    subCategories: [
-      {
-        name: "Domestic Adoption",
-        icon: "/logo/category-icon/religion.png",
-      },
-      {
-        name: "International Adoption",
-        icon: "/logo/category-icon/official.png",
-      },
-      {
-        name: "Adoption Procedures",
-        icon: "/logo/category-icon/immigrant.png",
-      },
+    subIcons: [
+      "/logo/category-icon/religion.png",
+      "/logo/category-icon/official.png",
+      "/logo/category-icon/immigrant.png",
     ],
   },
   {
-    id: 8,
-    title: "Тодорхойлолт",
     icon: "/logo/icon/8.svg",
-    description:
-      "Тодорхойлолт үйлчилгээний тайлбар. Энэ хэсэгт төрөл бүрийн үйлчилгээний талаар дэлгэрэнгүй мэдээллийг авах боломжтой.",
-    subCategories: [
-      {
-        name: "Service Information",
-        icon: "/logo/category-icon/official.png",
-      },
-      {
-        name: "Requirements",
-        icon: "/logo/category-icon/personal.png",
-      },
-      {
-        name: "Procedures",
-        icon: "/logo/category-icon/immigrant.png",
-      },
+    subIcons: [
+      "/logo/category-icon/official.png",
+      "/logo/category-icon/personal.png",
+      "/logo/category-icon/immigrant.png",
     ],
   },
 ];
 
 function ServiceCategoryPage() {
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const { t } = useLanguage();
+
+  const categories = t.servicePage.categories.map((cat, i) => ({
+    id: i + 1,
+    title: cat.title,
+    icon: meta[i].icon,
+    description: cat.description,
+    subCategories: cat.subCategories.map((name, j) => ({
+      name,
+      icon: meta[i].subIcons[j] || meta[i].subIcons[0],
+    })),
+  }));
+
+  const [activeId, setActiveId] = useState(1);
+  const activeCategory = categories.find((c) => c.id === activeId) || categories[0];
 
   return (
     <div className="container mx-auto px-4 py-10">
@@ -214,22 +101,21 @@ function ServiceCategoryPage() {
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
             <Link to="/" className="hover:text-blue-600">
-              Home
+              {t.servicePage.breadcrumbHome}
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gray-900">Service category</span>
+            <span className="text-gray-900">{t.servicePage.breadcrumb}</span>
           </nav>
         </div>
       </div>
       <div className="bg-white rounded-2xl shadow-xl p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* LEFT SIDEBAR */}
         <div className="border-r pr-4">
-          <h2 className="text-2xl font-semibold mb-6">Category</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t.servicePage.category}</h2>
           <div className="space-y-3">
             {categories.map((cat) => (
               <div
                 key={cat.id}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => setActiveId(cat.id)}
                 className={`flex items-center justify-between p-3 rounded-lg cursor-pointer transition-all ${
                   activeCategory.id === cat.id
                     ? "bg-blue-50 text-blue-700 font-medium"
@@ -246,7 +132,6 @@ function ServiceCategoryPage() {
           </div>
         </div>
 
-        {/* RIGHT CONTENT */}
         <div className="lg:col-span-2">
           <h2 className="text-3xl font-bold mb-2">{activeCategory.title}</h2>
 
@@ -256,10 +141,10 @@ function ServiceCategoryPage() {
 
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-semibold">
-              Apply for {activeCategory.title.toLowerCase()}
+              {t.servicePage.applyFor(activeCategory.title)}
             </h3>
             <span className="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm">
-              {activeCategory.subCategories.length} category
+              {activeCategory.subCategories.length} {t.servicePage.countLabel}
             </span>
           </div>
 

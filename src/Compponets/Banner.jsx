@@ -2,8 +2,10 @@ import React, { useMemo, useState, useEffect, useRef } from "react";
 import bannerVideo from "/logo/cover1.mp4";
 import countryList from "react-select-country-list";
 import { IoIosArrowDown } from "react-icons/io";
+import { useLanguage } from "../Provider/LanguageContext";
 
 function Banner() {
+  const { t } = useLanguage();
   const [selectedCountry, setSelectedCountry] = useState("");
   const [countryQuery, setCountryQuery] = useState("");
   const [showCountryList, setShowCountryList] = useState(false);
@@ -19,18 +21,15 @@ function Banner() {
 
   const countries = useMemo(() => countryList().getData(), []);
   const purposes = [
-    { value: "student", label: "Student" },
-    { value: "family", label: "Family" },
-    { value: "immigrant", label: "Immigrant" },
-    { value: "work", label: "Employment" },
-    { value: "religious", label: "Religious" },
-    { value: "tourism", label: "Tourism" },
-    { value: "personal", label: "Personal" },
-    { value: "short-term", label: "Short-term" },
-    {
-      value: "Визгүй зорчих улсын иргэн ",
-      label: "Визгүй зорчих улсын иргэн ",
-    },
+    { value: "student", label: t.banner.purposes.student },
+    { value: "family", label: t.banner.purposes.family },
+    { value: "immigrant", label: t.banner.purposes.immigrant },
+    { value: "work", label: t.banner.purposes.work },
+    { value: "religious", label: t.banner.purposes.religious },
+    { value: "tourism", label: t.banner.purposes.tourism },
+    { value: "personal", label: t.banner.purposes.personal },
+    { value: "short-term", label: t.banner.purposes.shortTerm },
+    { value: "visa-free", label: t.banner.purposes.visaFree },
   ];
 
   const handleSearch = () => {
@@ -46,7 +45,6 @@ function Banner() {
     }, 1500);
   };
 
-  // Filtered data
   const filteredCountries = countries.filter((c) =>
     c.label.toLowerCase().includes(countryQuery.toLowerCase())
   );
@@ -54,7 +52,6 @@ function Banner() {
     p.label.toLowerCase().includes(purposeQuery.toLowerCase())
   );
 
-  // 🔒 Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (countryRef.current && !countryRef.current.contains(e.target)) {
@@ -70,7 +67,6 @@ function Banner() {
 
   return (
     <div className="relative h-screen overflow-hidden py-4 md:py-10 container">
-      {/* Background video */}
       <video
         autoPlay
         loop
@@ -85,17 +81,15 @@ function Banner() {
       <div className="relative z-10 flex flex-col items-center justify-center w-full pt-20">
         <div className="text-center text-white px-4 mb-4 md:mb-12 space-y-4">
           <h1 className="text-2xl md:text-4xl font-semibold drop-shadow-lg leading-tight">
-            Which visa category is right for you?
+            {t.banner.heading}
           </h1>
           <p className="text-lg text-gray-400 max-w-4xl mx-auto drop-shadow">
-            You can quickly and easily find the visa information that suits you
-            below.
+            {t.banner.subheading}
           </p>
         </div>
 
         <div className="w-full max-w-4xl mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 bg-transparent">
-            {/* Country Input */}
             <div ref={countryRef} className="relative flex-1">
               <input
                 type="text"
@@ -105,7 +99,7 @@ function Banner() {
                   setShowCountryList(true);
                 }}
                 onFocus={() => setShowCountryList(true)}
-                placeholder="Select country"
+                placeholder={t.banner.country}
                 className="block w-full text-lg py-2 pl-6 pr-12 border-none bg-white rounded-xl shadow-2xl appearance-none focus:outline-none focus:ring-4 focus:ring-cyan-500/50 cursor-text"
               />
               <div
@@ -133,14 +127,13 @@ function Banner() {
                     ))
                   ) : (
                     <li className="px-4 py-2 text-gray-400">
-                      No country found
+                      {t.banner.noCountry}
                     </li>
                   )}
                 </ul>
               )}
             </div>
 
-            {/* Purpose Input */}
             <div ref={purposeRef} className="relative flex-1">
               <input
                 type="text"
@@ -150,7 +143,7 @@ function Banner() {
                   setShowPurposeList(true);
                 }}
                 onFocus={() => setShowPurposeList(true)}
-                placeholder="Purpose of trip"
+                placeholder={t.banner.purpose}
                 className="block w-full text-lg py-2 pl-6 pr-12 border-none bg-white rounded-xl shadow-2xl appearance-none focus:outline-none focus:ring-4 focus:ring-cyan-500/50 cursor-text"
               />
               <div
@@ -178,14 +171,13 @@ function Banner() {
                     ))
                   ) : (
                     <li className="px-4 py-2 text-gray-400">
-                      No purpose found
+                      {t.banner.noPurpose}
                     </li>
                   )}
                 </ul>
               )}
             </div>
 
-            {/* Search Button */}
             <button
               onClick={handleSearch}
               disabled={isSearching}
@@ -195,7 +187,7 @@ function Banner() {
                   : "bg-cyan-500 hover:bg-cyan-400 text-white hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
               }`}
             >
-              {isSearching ? "Searching..." : "Check"}
+              {isSearching ? t.banner.searching : t.banner.check}
             </button>
           </div>
         </div>

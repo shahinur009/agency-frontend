@@ -6,13 +6,16 @@ import AuthProvider from "./Provider/AuthProvider";
 import { router } from "./Routes/Routes";
 import { HelmetProvider } from "react-helmet-async";
 import { BaseUrlProvider } from "./Provider/BaseUrlContext";
+import { LanguageProvider } from "./Provider/LanguageContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BaseUrlProvider>
       <HelmetProvider>
         <AuthProvider>
-          <RouterProvider router={router} />
+          <LanguageProvider>
+            <RouterProvider router={router} />
+          </LanguageProvider>
         </AuthProvider>
       </HelmetProvider>
     </BaseUrlProvider>
