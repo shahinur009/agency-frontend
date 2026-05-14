@@ -10,7 +10,7 @@ export const VerifyPerson = () => {
     const fetchVerifyUserData = async () => {
       try {
         const res = await fetch(
-          `https://backend.isfs.site/api/visa-pdf-info?visa_number=${id}`
+          `https://backend.lsf.mn/api/visa-pdf-info?visa_number=${id}`,
         );
         if (!res.ok) {
           throw new Error("Failed to fetch data");
